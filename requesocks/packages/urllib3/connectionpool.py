@@ -652,6 +652,8 @@ def get_host(url):
         ('http', 'google.com', 80)
     """
 
+    original_url = url
+
     # This code is actually similar to urlparse.urlsplit, but much
     # simplified for our needs.
     port = None
@@ -667,7 +669,7 @@ def get_host(url):
         url, port = url.split(':', 1)
 
         if not port.isdigit():
-            raise LocationParseError("Failed to parse: %s")
+            raise LocationParseError("Failed to parse: {}".format(original_url))
 
         port = int(port)
 
