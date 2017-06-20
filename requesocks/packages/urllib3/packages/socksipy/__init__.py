@@ -1,2 +1,2 @@
 import socks
-import socksipyhandler
+import sockshandler
